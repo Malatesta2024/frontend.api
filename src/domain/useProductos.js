@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProductos as fetchProductos } from "../api/producto";
+import { getProductos as fetchProductos } from "../api/Producto.js";
 
 export const useProductos = () => {
 const [data, setData] = useState([]);

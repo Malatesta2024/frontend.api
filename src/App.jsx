@@ -4,7 +4,7 @@ import {
   createProducto,
   updateProducto,
   deleteProducto,
-} from "./api/producto";
+} from "./api/Producto.js";
 
 export default function App() {
   const { data, loading, error, getProductos } = useProductos();
@@ -29,10 +29,10 @@ export default function App() {
 
     try {
       if (editingId) {
-        console.log("Actualizando producto:", editingId, form); // Para depuración
+        console.log("Actualizando producto:", editingId, form); 
         const response = await updateProducto(editingId, form);
         if (response.data) {
-          await getProductos(); // 👈 Esto asegura que se vean los datos actualizados
+          await getProductos(); 
           setForm({ nombre_producto: "", RUT_proveedor: "" });
           setEditingId(null);
           setMensaje("✅ Producto actualizado con éxito");
